@@ -1,427 +1,419 @@
-#################################################################################
-# DeepMIP output variables following the CMIP6 data request
-#################################################################################
+# Dictionary describing the list of DeepMIP standard variables
 
-#### Atmosphere variables
+variable_dict = {
 
-variable_dict = dict()
+    # atmosphere
+    "tas": {
+        "long_name": "Near-Surface Air Temperature",
+        "standard_name": "air_temperature",
+        "short_name": "temperature",
+        "unit": "K",
+        "dimensions": 3,
+        "realm": "atmos",
+    },
+    "pr": {
+        "long_name": "Precipitation",
+        "standard_name": "precipitation_flux",
+        "short_name": "precipitation",
+        "unit": "kg m^{-2} s^{-1}",
+        "dimensions": 3,
+        "realm": "atmos",
+    },
+    "ts": {
+        "long_name": "Surface Temperature",
+        "standard_name": "surface_temperature",
+        "unit": "K",
+        "dimensions": 3,
+        "realm": "atmos",
+    },
+    "evspsbl": {
+        "long_name": "Evaporation Including Sublimation and Transpiration",
+        "standard_name": "water_evapotranspiration_flux",
+        "unit": "kg m^{-2} s^{-1}",
+        "dimensions": 3,
+        "realm": "atmos",
+    },
+    "clt": {
+        "long_name": "Total Cloud Cover Percentage",
+        "standard_name": "cloud_area_fraction",
+        "unit": "%",
+        "dimensions": 3,
+        "realm": "atmos",
+    },
+    "rlds": {
+        "long_name": "Surface Downwelling Longwave Radiation",
+        "standard_name": "surface_downwelling_longwave_flux_in_air",
+        "unit": "W m^{-2}",
+        "dimensions": 3,
+        "realm": "atmos",
+    },
+    "rlus": {
+        "long_name": "Surface Upwelling Longwave Radiation",
+        "standard_name": "surface_upwelling_longwave_flux_in_air",
+        "unit": "W m^{-2}",
+        "dimensions": 3,
+        "realm": "atmos",
+    },
+    "rsds": {
+        "long_name": "Surface Downwelling Shortwave Radiation",
+        "standard_name": "surface_downwelling_shortwave_flux_in_air",
+        "unit": "W m^{-2}",
+        "dimensions": 3,
+        "realm": "atmos",
+    },
+    "rsus": {
+        "long_name": "Surface Upwelling Shortwave Radiation",
+        "standard_name": "surface_upwelling_shortwave_flux_in_air",
+        "unit": "W m^{-2}",
+        "dimensions": 3,
+        "realm": "atmos",
+    },
+    "rsdt": {
+        "long_name": "TOA Incident Shortwave Radiation",
+        "standard_name": "toa_incoming_shortwave_flux",
+        "unit": "W m^{-2}",
+        "dimensions": 3,
+        "realm": "atmos",
+    },
+    "rsut": {
+        "long_name": "TOA Outgoing Shortwave Radiation",
+        "standard_name": "toa_outgoing_shortwave_flux",
+        "unit": "W m^{-2}",
+        "dimensions": 3,
+        "realm": "atmos",
+    },
+    "rlut": {
+        "long_name": "TOA Outgoing Longwave Radiation",
+        "standard_name": "toa_outgoing_longwave_flux",
+        "unit": "W m^{-2}",
+        "dimensions": 3,
+        "realm": "atmos",
+    },
+    "rldscs": {
+        "long_name": "Surface Downwelling Clear-Sky Longwave Radiation",
+        "standard_name": "surface_downwelling_longwave_flux_in_air_assuming_clear_sky",
+        "unit": "W m^{-2}",
+        "dimensions": 3,
+        "realm": "atmos",
+    },
+    "rsdscs": {
+        "long_name": "Surface Downwelling Clear-Sky Shortwave Radiation",
+        "standard_name": "surface_downwelling_shortwave_flux_in_air_assuming_clear_sky",
+        "unit": "W m^{-2}",
+        "dimensions": 3,
+        "realm": "atmos",
+    },
+    "rsuscs": {
+        "long_name": "Surface Upwelling Clear-Sky Shortwave Radiation",
+        "standard_name": "surface_upwelling_shortwave_flux_in_air_assuming_clear_sky",
+        "unit": "W m^{-2}",
+        "dimensions": 3,
+        "realm": "atmos",
+    },
+    "rsutcs": {
+        "long_name": "TOA Outgoing Clear-Sky Shortwave Radiation",
+        "standard_name": "toa_outgoing_shortwave_flux_assuming_clear_sky",
+        "unit": "W m^{-2}",
+        "dimensions": 3,
+        "realm": "atmos",
+    },
+    "rlutcs": {
+        "long_name": "TOA Outgoing Clear-Sky Longwave Radiation",
+        "standard_name": "toa_outgoing_longwave_flux_assuming_clear_sky",
+        "unit": "W m^{-2}",
+        "dimensions": 3,
+        "realm": "atmos",
+    },
+    "rsnscs": {
+        "long_name": "Surface Net Clear-Sky Shortwave Radiation",
+        "standard_name": "surface_net_shortwave_flux_assuming_clear_sky",
+        "unit": "W m^{-2}",
+        "dimensions": 3,
+        "realm": "atmos",
+    },
+    "rlnscs": {
+        "long_name": "Surface Net Clear-Sky Longwave Radiation",
+        "standard_name": "surface_net_longwave_flux_assuming_clear_sky",
+        "unit": "W m^{-2}",
+        "dimensions": 3,
+        "realm": "atmos",
+    },
+    "hfss": {
+        "long_name": "Surface Upward Sensible Heat Flux",
+        "standard_name": "surface_upward_sensible_heat_flux",
+        "unit": "W m^{-2}",
+        "dimensions": 3,
+        "realm": "atmos",
+    },
+    "hfls": {
+        "long_name": "Surface Upward Latent Heat Flux",
+        "standard_name": "surface_upward_latent_heat_flux",
+        "unit": "W m^{-2}",
+        "dimensions": 3,
+        "realm": "atmos",
+    },
+    "uas": {
+        "long_name": "Eastward Near-Surface Wind",
+        "standard_name": "eastward_wind",
+        "unit": "m s^{-1}",
+        "dimensions": 3,
+        "realm": "atmos",
+    },
+    "vas": {
+        "long_name": "Northward Near-Surface Wind",
+        "standard_name": "northward_wind",
+        "unit": "m s^{-1}",
+        "dimensions": 3,
+        "realm": "atmos",
+    },
+    "tauu": {
+        "long_name": "Surface Downward Eastward Wind Stress",
+        "standard_name": "surface_downward_eastward_stress",
+        "unit": "Pa",
+        "dimensions": 3,
+        "realm": "atmos",
+    },
+    "tauv": {
+        "long_name": "Surface Downward Northward Wind Stress",
+        "standard_name": "surface_downward_northward_stress",
+        "unit": "Pa",
+        "dimensions": 3,
+        "realm": "atmos",
+    },
+    "ps": {
+        "long_name": "Surface Air Pressure",
+        "standard_name": "surface_air_pressure",
+        "unit": "Pa",
+        "dimensions": 3,
+        "realm": "atmos",
+    },
+    "psl": {
+        "long_name": "Sea Level Pressure",
+        "standard_name": "air_pressure_at_mean_sea_level",
+        "unit": "Pa",
+        "dimensions": 3,
+        "realm": "atmos",
+    },
+    "snc": {
+        "long_name": "Snow Area Fraction",
+        "standard_name": "surface_snow_area_fraction",
+        "unit": "%",
+        "dimensions": 3,
+        "realm": "atmos",
+    },
+    "ua": {
+        "long_name": "Eastward Wind",
+        "standard_name": "eastward_wind",
+        "unit": "m s^{-1}",
+        "dimensions": 4,
+        "realm": "atmos",
+    },
+    "va": {
+        "long_name": "Northward Wind",
+        "standard_name": "northward_wind",
+        "unit": "m s^{-1}",
+        "dimensions": 4,
+        "realm": "atmos",
+    },
+    "wap": {
+        "long_name": "Omega (=dp/dt)",
+        "standard_name": "lagrangian_tendency_of_air_pressure",
+        "unit": "Pa s^{-1}",
+        "dimensions": 4,
+        "realm": "atmos",
+    },
+    "zg": {
+        "long_name": "Geopotential Height",
+        "standard_name": "geopotential_height",
+        "unit": "m",
+        "dimensions": 4,
+        "realm": "atmos",
+    },
+    "ta": {
+        "long_name": "Air Temperature",
+        "standard_name": "air_temperature",
+        "unit": "K",
+        "dimensions": 4,
+        "realm": "atmos",
+    },
+    "hus": {
+        "long_name": "Specific Humidity",
+        "standard_name": "specific_humidity",
+        "unit": "1",
+        "dimensions": 4,
+        "realm": "atmos",
+    },
+    "cl": {
+        "long_name": "Percentage Cloud Cover",
+        "standard_name": "cloud_area_fraction_in_atmosphere_layer",
+        "unit": "%",
+        "dimensions": 4,
+        "realm": "atmos",
+    },
+    "cll": {
+        "long_name": "Low Level Cloud Fraction",
+        "standard_name": "cloud_area_fraction_in_atmosphere_layer",
+        "unit": "%",
+        "dimensions": 3,
+        "realm": "atmos",
+    },
+    "clm": {
+        "long_name": "Mid Level Cloud Fraction",
+        "standard_name": "cloud_area_fraction_in_atmosphere_layer",
+        "unit": "%",
+        "dimensions": 3,
+        "realm": "atmos",
+    },
+    "clh": {
+        "long_name": "High Level Cloud Fraction",
+        "standard_name": "cloud_area_fraction_in_atmosphere_layer",
+        "unit": "%",
+        "dimensions": 3,
+        "realm": "atmos",
+    },
 
-variable_dict["tas"] = {
-    "longname": "Near-surface air temperature",
-    "label": "temperature",
-    "unit": "K",
-    "dimensions": 3,
-    "realm": "atmos",
-}
+    # ocean
+    "tos": {
+        "long_name": "Sea Surface Temperature",
+        "standard_name": "sea_surface_temperature",
+        "short_name": "temperature",
+        "unit": "degC",
+        "dimensions": 3,
+        "realm": "ocean",
+    },
+    "siconc": {
+        "long_name": "Sea-Ice Area Percentage (Ocean Grid)",
+        "standard_name": "sea_ice_area_fraction",
+        "unit": "%",
+        "dimensions": 3,
+        "realm": "ocean",
+    },
+    "uo": {
+        "long_name": "Sea Water X Velocity",
+        "standard_name": "sea_water_x_velocity",
+        "unit": "m s^{-1}",
+        "dimensions": 4,
+        "realm": "ocean",
+    },
+    "vo": {
+        "long_name": "Sea Water Y Velocity",
+        "standard_name": "sea_water_y_velocity",
+        "unit": "m s^{-1}",
+        "dimensions": 4,
+        "realm": "ocean",
+    },
+    "wo": {
+        "long_name": "Sea Water Vertical Velocity",
+        "standard_name": "upward_sea_water_velocity",
+        "unit": "m s^{-1}",
+        "dimensions": 4,
+        "realm": "ocean",
+    },
+    "thetao": {
+        "long_name": "Sea Water Potential Temperature",
+        "standard_name": "sea_water_potential_temperature",
+        "unit": "degC",
+        "dimensions": 4,
+        "realm": "ocean",
+    },
+    "so": {
+        "long_name": "Sea Water Salinity",
+        "standard_name": "sea_water_salinity",
+        "unit": "0.001",
+        "dimensions": 4,
+        "realm": "ocean",
+    },
+    "mlotst": {
+        "long_name": "Ocean Mixed Layer Thickness Defined by Sigma T",
+        "standard_name": "ocean_mixed_layer_thickness_defined_by_sigma_t",
+        "unit": "m",
+        "dimensions": 3,
+        "realm": "ocean",
+    },
+    "zos": {
+        "long_name": "Sea Surface Height Above Geoid",
+        "standard_name": "sea_surface_height_above_geoid",
+        "unit": "m",
+        "dimensions": 3,
+        "realm": "ocean",
+    },
+    "tauuo": {
+        "long_name": "Sea Water Surface Downward X Stress",
+        "standard_name": "downward_x_stress_at_sea_water_surface",
+        "unit": "N m^{-2}",
+        "dimensions": 3,
+        "realm": "ocean",
+    },
+    "tauvo": {
+        "long_name": "Sea Water Surface Downward Y Stress",
+        "standard_name": "downward_y_stress_at_sea_water_surface",
+        "unit": "N m^{-2}",
+        "dimensions": 3,
+        "realm": "ocean",
+    },
+    "hfds": {
+        "long_name": "Downward Heat Flux at Sea Water Surface",
+        "standard_name": "surface_downward_heat_flux_in_sea_water",
+        "unit": "W m^{-2}",
+        "dimensions": 3,
+        "realm": "ocean",
+    },
+    "wfo": {
+        "long_name": "Water Flux Into Sea Water",
+        "standard_name": "water_flux_into_sea_water",
+        "unit": "kg m^{-2} s^{-1}",
+        "dimensions": 3,
+        "realm": "ocean",
+    },
+    "difvtrbo": {
+        "long_name": "Ocean Vertical Tracer Diffusivity Due to Background",
+        "standard_name": "ocean_vertical_tracer_diffusivity_due_to_background",
+        "unit": "m^{2} s^{-1}",
+        "dimensions": 4,
+        "realm": "ocean",
+    },
+    "difvmo": {
+        "long_name": "Ocean Vertical Momentum Diffusivity",
+        "standard_name": "ocean_vertical_momentum_diffusivity",
+        "unit": "m^{2} s^{-1}",
+        "dimensions": 4,
+        "realm": "ocean",
+    },
+    "msftbarot": {
+        "long_name": "Ocean Barotropic Mass Streamfunction",
+        "standard_name": "ocean_barotropic_mass_streamfunction",
+        "unit": "kg s^{-1}",
+        "dimensions": 3,
+        "realm": "ocean",
+    },
+    "msftmz": {
+        "long_name": "Ocean Meridional Overturning Mass Streamfunction",
+        "standard_name": "ocean_meridional_overturning_mass_streamfunction",
+        "unit": "kg s^{-1}",
+        "dimensions": 3,
+        "realm": "ocean",
+    },
 
-variable_dict["pr"] = {
-    "longname": "Precipitation",
-    "label": "precipitation",
-    "unit": "kgm^{-2}s^{-1}",
-    "dimensions": 3,
-    "realm": "atmos",
-}
-
-variable_dict["ts"] = {
-    "longname": "Surface skin temperature",
-    "unit": "K",
-    "dimensions": 3,
-    "realm": "atmos",
-}
-
-variable_dict["evspsbl"] = {
-    "longname": "Total evaporation",
-    "unit": "kgm^{-2}s^{-1}",
-    "dimensions": 3,
-    "realm": "atmos",
-}
-
-variable_dict["clt"] = {
-    "longname": "Total cloud cover fraction",
-    "unit": "[0,1]",
-    "dimensions": 3,
-    "realm": "atmos",
-}
-
-variable_dict["rlds"] = {
-    "longname": "Surface downwelling longwave radiation",
-    "unit": "Wm^{-2}",
-    "dimensions": 3,
-    "realm": "atmos",
-}
-
-variable_dict["rlus"] = {
-    "longname": "Surface upwelling longwave radiation",
-    "unit": "Wm^{-2}",
-    "dimensions": 3,
-    "realm": "atmos",
-}
-
-variable_dict["rsds"] = {
-    "longname": "Surface downwelling shortwave radiation",
-    "unit": "Wm^{-2}",
-    "dimensions": 3,
-    "realm": "atmos",
-}
-
-variable_dict["rsus"] = {
-    "longname": "Surface upwelling shortwave radiation",
-    "unit": "Wm^{-2}",
-    "dimensions": 3,
-    "realm": "atmos",
-}
-
-variable_dict["rsdt"] = {
-    "longname": "TOA incident shortwave radiation",
-    "unit": "Wm^{-2}",
-    "dimensions": 3,
-    "realm": "atmos",
-}
-
-variable_dict["rsut"] = {
-    "longname": "TOA outgoing shortwave radiation",
-    "unit": "Wm^{-2}",
-    "dimensions": 3,
-    "realm": "atmos",
-}
-
-variable_dict["rlut"] = {
-    "longname": "TOA outgoing longwave radiation",
-    "unit": "Wm^{-2}",
-    "dimensions": 3,
-    "realm": "atmos",
-}
-
-variable_dict["rldscs"] = {
-    "longname": "Surface downwelling longwave radiation (clear sky)",
-    "unit": "Wm^{-2}",
-    "dimensions": 3,
-    "realm": "atmos",
-}
-
-variable_dict["rsdscs"] = {
-    "longname": "Surface downwelling shortwave radiation (clear sky)",
-    "unit": "Wm^{-2}",
-    "dimensions": 3,
-    "realm": "atmos",
-}
-
-variable_dict["rsuscs"] = {
-    "longname": "Surface upwelling shortwave radiation (clear sky)",
-    "unit": "Wm^{-2}",
-    "dimensions": 3,
-    "realm": "atmos",
-}
-
-variable_dict["rsutcs"] = {
-    "longname": "TOA outgoing shortwave radiation (clear sky)",
-    "unit": "Wm^{-2}",
-    "dimensions": 3,
-    "realm": "atmos",
-}
-
-variable_dict["rlutcs"] = {
-    "longname": "TOA outgoing longwave radiation (clear sky)",
-    "unit": "Wm^{-2}",
-    "dimensions": 3,
-    "realm": "atmos",
-}
-
-variable_dict["hfss"] = {
-    "longname": "Sensible heat flux (upward)",
-    "unit": "Wm^{-2}",
-    "dimensions": 3,
-    "realm": "atmos",
-}
-
-variable_dict["hfls"] = {
-    "longname": "Latent heat flux (upward)",
-    "unit": "Wm^{-2}",
-    "dimensions": 3,
-    "realm": "atmos",
-}
-
-variable_dict["uas"] = {
-    "longname": "Near-surface eastward wind",
-    "unit": "ms^{-1}",
-    "dimensions": 3,
-    "realm": "atmos",
-}
-
-variable_dict["vas"] = {
-    "longname": "Near-surface northward wind",
-    "unit": "ms^{-1}",
-    "dimensions": 3,
-    "realm": "atmos",
-}
-
-variable_dict["uas"] = {
-    "longname": "Near-surface eastward wind",
-    "unit": "ms^{-1}",
-    "dimensions": 3,
-    "realm": "atmos",
-}
-
-variable_dict["tauu"] = {
-    "longname": "Surface eastward wind stress",
-    "unit": "Nm^{-2}",
-    "dimensions": 3,
-    "realm": "atmos",
-}
-
-variable_dict["tauv"] = {
-    "longname": "Surface northward wind stress",
-    "unit": "Nm^{-2}",
-    "dimensions": 3,
-    "realm": "atmos",
-}
-
-variable_dict["psl"] = {
-    "longname": "Mean sea level pressure",
-    "unit": "Pa",
-    "dimensions": 3,
-    "realm": "atmos",
-}
-
-variable_dict["ps"] = {
-    "longname": "Surface pressure",
-    "unit": "Pa",
-    "dimensions": 3,
-    "realm": "atmos",
-}
-
-variable_dict["ua"] = {
-    "longname": "Eastward wind on model levels",
-    "unit": "ms^{-1}",
-    "dimensions": 4,
-    "realm": "atmos",
-}
-
-variable_dict["va"] = {
-    "longname": "Northward wind on model levels",
-    "unit": "ms^{-1}",
-    "dimensions": 4,
-    "realm": "atmos",
-}
-
-variable_dict["wa"] = {
-    "longname": "Vertical wind on model levels",
-    "unit": "ms^{-1}",
-    "dimensions": 4,
-    "realm": "atmos",
-}
-
-variable_dict["uap"] = {
-    "longname": "Eastward wind on pressure levels",
-    "unit": "ms^{-1}",
-    "dimensions": 4,
-    "realm": "atmos",
-}
-
-variable_dict["vap"] = {
-    "longname": "Northward wind on pressure levels",
-    "unit": "ms^{-1}",
-    "dimensions": 4,
-    "realm": "atmos",
-}
-
-variable_dict["wap"] = {
-    "longname": "Vertical wind on pressure levels",
-    "unit": "Pas^{-1}",
-    "dimensions": 4,
-    "realm": "atmos",
-}
-
-variable_dict["zg"] = {
-    "longname": "Geopotential height on pressure levels",
-    "unit": "m",
-    "dimensions": 4,
-    "realm": "atmos",
-}
-
-variable_dict["ta"] = {
-    "longname": "Temperature on pressure levels",
-    "unit": "K",
-    "dimensions": 4,
-    "realm": "atmos",
-}
-
-variable_dict["hus"] = {
-    "longname": "Specific humidity on pressure levels",
-    "unit": "kgkg^{-1}",
-    "dimensions": 4,
-    "realm": "atmos",
-}
-
-variable_dict["cl"] = {
-    "longname": "Cloud fraction on pressure levels",
-    "unit": "[0,1]",
-    "dimensions": 4,
-    "realm": "atmos",
-}
-
-variable_dict["cll"] = {
-    "longname": "Low-level cloud fraction",
-    "unit": "[0,1]",
-    "dimensions": 3,
-    "realm": "atmos",
-}
-
-variable_dict["clm"] = {
-    "longname": "Medium-level cloud fraction",
-    "unit": "[0,1]",
-    "dimensions": 3,
-    "realm": "atmos",
-}
-
-variable_dict["clh"] = {
-    "longname": "High-level cloud fraction",
-    "unit": "[0,1]",
-    "dimensions": 3,
-    "realm": "atmos",
-}
-
-#### Ocean variables
-
-variable_dict["tos"] = {
-    "longname": "Sea surface temperature",
-    "label": "temperature",
-    "unit": "°C",
-    "dimensions": 3,
-    "realm": "ocean",
-}
-
-variable_dict["siconc"] = {
-    "longname": "Sea-ice fraction",
-    "unit": "[0,1]",
-    "dimensions": 3,
-    "realm": "ocean",
-}
-
-variable_dict["uo"] = {
-    "longname": "Eastward velocity on model levels",
-    "unit": "cms^{-1}",
-    "dimensions": 4,
-    "realm": "ocean",
-}
-
-variable_dict["vo"] = {
-    "longname": "Northward velocity on model levels",
-    "unit": "cms^{-1}",
-    "dimensions": 4,
-    "realm": "ocean",
-}
-
-variable_dict["wo"] = {
-    "longname": "Vertical velocity on model levels",
-    "unit": "cms^{-1}",
-    "dimensions": 4,
-    "realm": "ocean",
-}
-
-variable_dict["thetao"] = {
-    "longname": "Potential temperature on model levels",
-    "unit": "°C",
-    "dimensions": 4,
-    "realm": "ocean",
-}
-
-variable_dict["so"] = {
-    "longname": "Salinity on model levels",
-    "unit": "psu",
-    "dimensions": 4,
-    "realm": "ocean",
-}
-
-variable_dict["mlotst"] = {
-    "longname": "Mixed-layer depth",
-    "unit": "m",
-    "dimensions": 3,
-    "realm": "ocean",
-}
-
-variable_dict["zos"] = {
-    "longname": "Sea surface height",
-    "unit": "m",
-    "dimensions": 3,
-    "realm": "ocean",
-}
-
-variable_dict["tauuo"] = {
-    "longname": "Surface eastward wind stress (on ocean grid)",
-    "unit": "Nm^{-2}",
-    "dimensions": 3,
-    "realm": "ocean",
-}
-
-variable_dict["tauvo"] = {
-    "longname": "Surface northward wind stress (on ocean grid)",
-    "unit": "Nm^{-2}",
-    "dimensions": 3,
-    "realm": "ocean",
-}
-
-variable_dict["hfno"] = {
-    "longname": "Net surface heat flux (on ocean grid)",
-    "unit": "Wm^{-2}",
-    "dimensions": 3,
-    "realm": "ocean",
-}
-
-variable_dict["wfno"] = {
-    "longname": "Net surface freshwater flux (on ocean grid)",
-    "unit": "kgm^{-2}s^{-1}",
-    "dimensions": 3,
-    "realm": "ocean",
-}
-
-variable_dict["difvto"] = {
-    "longname": "Vertical ocean tracer diffusivity",
-    "unit": "m^{-2}s^{-1}",
-    "dimensions": 4,
-    "realm": "ocean",
-}
-
-variable_dict["difvmo"] = {
-    "longname": "Vertical ocean momentum diffusivity",
-    "unit": "m^{-2}s^{-1}",
-    "dimensions": 4,
-    "realm": "ocean",
-}
-
-variable_dict["sftbarot"] = {
-    "longname": "Barotropic streamfunction",
-    "unit": "Sv",
-    "dimensions": 3,
-    "realm": "ocean",
-}
-
-variable_dict["sftmyz"] = {
-    "longname": "Global overturning streamfunction",
-    "unit": "Sv",
-    "dimensions": 3,
-    "realm": "ocean",
-}
-
-#### Boundary conditions
-
-variable_dict["sftlf"] = {
-    "longname": "Land-sea mask (on atmospheric grid)",
-    "unit": "[0,1]",
-    "dimensions": 2,
-    "realm": "atmos",
-}
-
-variable_dict["orog"] = {
-    "longname": "Topography (on atmospheric grid)",
-    "unit": "[0,1]",
-    "dimensions": 2,
-    "realm": "atmos",
-}
-
-variable_dict["deptho"] = {
-    "longname": "Bathymetry (on ocean grid)",
-    "unit": "[0,1]",
-    "dimensions": 2,
-    "realm": "ocean",
+    # boundary conditions
+    "sftlf": {
+        "long_name": "Percentage of the Grid Cell Occupied by Land",
+        "standard_name": "land_area_fraction",
+        "unit": "%",
+        "dimensions": 2,
+        "realm": "atmos",
+    },
+    "orog": {
+        "long_name": "Surface Altitude",
+        "standard_name": "surface_altitude",
+        "unit": "m",
+        "dimensions": 2,
+        "realm": "atmos",
+    },
+    "deptho": {
+        "long_name": "Sea Floor Depth Below Geoid",
+        "standard_name": "sea_floor_depth_below_geoid",
+        "unit": "m",
+        "dimensions": 2,
+        "realm": "ocean",
+    },
 }
