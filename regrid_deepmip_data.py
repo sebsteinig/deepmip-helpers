@@ -1,4 +1,41 @@
-#!/usr/bin/env python3
+"""
+Script: regrid_deepmip_data.py
+Author: Sebastian Steinig
+Date: 23-10-2023
+
+Description:
+    This script interpolates global netCDF files from the DeepMIP datasets to a common horizontal grid.
+    It uses the Climate Data Operators (CDO) tool to perform regridding for a list of specified
+    variables for all available models and experiments of the respective DeepMIP ensemble.
+
+Usage:
+    python3 regrid_deepmip_data.py
+
+    The script does not take any command-line arguments. All configuration parameters
+    should be set at the top of the script.
+
+Configuration Parameters:
+    - DBDIR: str
+        Path to the directory containing the DeepMIP-Eocene dataset.
+    - OUTDIR: str
+        Path to the directory where the regridded files will be saved.
+    - VERSION: str
+        Version of the dataset to be processed.
+    - TARGET_GRID: str
+        The target grid resolution for regridding (https://code.mpimet.mpg.de/projects/cdo/embedded/index.html#x1-280001.5)
+    - ATM_REGRIDDING: str
+        The regridding method to be used for atmospheric variables (https://code.mpimet.mpg.de/projects/cdo/embedded/index.html#x1-6900002.12)
+    - OCN_REGRIDDING: str
+        The regridding method to be used for oceanic variables (https://code.mpimet.mpg.de/projects/cdo/embedded/index.html#x1-6900002.12)
+    - VARIABLES: list of str
+        List of variables to be regridded following the DeepMIP/CMIP6 naming conventions.
+
+Requirements:
+    - Python 3
+    - Climate Data Operators (CDO) https://code.mpimet.mpg.de/projects/cdo/embedded/index.html
+    - local DeepMIP data set
+"""
+
 import sys
 import os
 import subprocess
@@ -7,13 +44,13 @@ from dictionaries.deepmip_variables import variable_dict
 
 
 # Configuration parameters to be set by user
-DBDIR = "/Volumes/external_Samsung-SSD/ceda/deepmip-eocene-p1"
+DBDIR = "/data/deepmip-eocene-p1"
 OUTDIR = os.path.join(DBDIR, "regridded_fields")
 VERSION = "v1.0"
 TARGET_GRID = "r360x180"
 ATM_REGRIDDING = "remapbil"
 OCN_REGRIDDING = "remapnn"
-VARIABLES = ["tas", "pr", "tos"]
+VARIABLES = ["tas", "tos", "pr"]
 
 
 def log(level, message):
@@ -41,7 +78,9 @@ def regrid_variable(in_dir, out_dir, var, realm):
 
     os.chdir(in_dir)
     files = [
-        f for f in os.listdir(in_dir) if f.startswith(var) and f.endswith(".mean.nc")
+        f
+        for f in os.listdir(in_dir)
+        if f.startswith(f"{var}_") and f.endswith(".mean.nc")
     ]
 
     if len(files) == 1:
