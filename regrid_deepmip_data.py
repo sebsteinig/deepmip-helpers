@@ -20,7 +20,7 @@ Configuration Parameters:
     - OCN_REGRIDDING: str
         The regridding method to be used for oceanic variables (https://code.mpimet.mpg.de/projects/cdo/embedded/index.html#x1-6900002.12)
     - VARIABLES: list of str
-        List of variables to be regridded following the DeepMIP/CMIP6 naming conventions.
+        List of variables to be regridded following the DeepMIP/CMIP6 naming convention.
 
 Requirements:
     - Python 3
@@ -43,13 +43,13 @@ from dictionaries.deepmip_variables import variable_dict
 
 
 # Configuration parameters to be set by user
-DBDIR = "/data/deepmip-eocene-p1"
-OUTDIR = os.path.join(DBDIR, "regridded_fields")
-VERSION = "v1.0"
-TARGET_GRID = "r360x180"
-ATM_REGRIDDING = "remapbil"
-OCN_REGRIDDING = "remapnn"
-VARIABLES = ["tas", "tos", "pr"]
+DBDIR           = "/data/deepmip-eocene-p1"
+OUTDIR          = os.path.join(DBDIR, "regridded_fields")
+VERSION         = "v1.0"
+TARGET_GRID     = "r360x180"
+ATM_REGRIDDING  = "remapbil"
+OCN_REGRIDDING  = "remapnn"
+VARIABLES       = ["tas", "tos", "pr"]
 
 
 def log(level, message):

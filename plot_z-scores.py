@@ -52,8 +52,7 @@ from dictionaries.deepmip_eocene_p1_models import model_dict
 from dictionaries.deepmip_variables import variable_dict
 
 # define some global user input
-# DBDIR       = "../deepmip-eocene-p1"
-DBDIR       = "/Volumes/external_Samsung-SSD/ceda/deepmip-eocene-p1"
+DBDIR       = "/data/deepmip-eocene-p1"
 VERSION     = "v1.0"
 GRID        = "r180x90"
 REGRID_DIR  = f"{DBDIR}/validation_tables/data"

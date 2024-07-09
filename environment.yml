@@ -1,0 +1,11 @@
+name: deepmip-helpers
+channels:
+  - conda-forge
+  - nodefaults
+dependencies:
+  - cdo
+  - matplotlib
+  - netcdf4
+  - python-cdo
+  - tqdm
+  - xarray
