@@ -553,9 +553,6 @@ def get_max_number_of_fields(tasks):
                     file_count += 1
     return file_count
 
-#################################################################################
-# main program startes here
-#################################################################################
 
 def main():
     if not os.path.exists(REGRID_DIR):
