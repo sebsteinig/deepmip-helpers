@@ -1,18 +1,10 @@
 """
 Script: regrid_deepmip_data.py
-Author: Sebastian Steinig
-Date: 23-10-2023
 
 Description:
-    This script interpolates global netCDF files from the DeepMIP datasets to a common horizontal grid.
+    This script interpolates global netCDF files from the DeepMIP data sets to a common horizontal grid.
     It uses the Climate Data Operators (CDO) tool to perform regridding for a list of specified
     variables for all available models and experiments of the respective DeepMIP ensemble.
-
-Usage:
-    python3 regrid_deepmip_data.py
-
-    The script does not take any command-line arguments. All configuration parameters
-    should be set at the top of the script.
 
 Configuration Parameters:
     - DBDIR: str
@@ -34,6 +26,13 @@ Requirements:
     - Python 3
     - Climate Data Operators (CDO) https://code.mpimet.mpg.de/projects/cdo/embedded/index.html
     - local DeepMIP data set
+
+Usage:
+    python3 regrid_deepmip_data.py
+
+    The script does not take any command-line arguments. All configuration parameters
+    should be set at the top of the script.
+
 """
 
 import sys
