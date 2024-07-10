@@ -44,4 +44,4 @@ Let's recreate the overview tables for the DeepMIP-Eocene-p1 data set (see figur
     ``` bash
     python3 plot_z-scores.py
     ```
-The script will show a progress bar and all tables will be saved to `<DBDIR>/validation_tables/`.
+    The script will show a progress bar and all tables will be saved to `<DBDIR>/validation_tables/`.
