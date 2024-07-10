@@ -4,14 +4,14 @@ is available in this [preprint](https://sebsteinig.github.io/assets/pdf/DeepMIP-
 
 
 ## dictionaries
-The dictionaries contain information about models and experiments of individual DeepMIP ensembles, as well as an overview of all defined variables. These dictionaries are continously updated with new model simulations and DeepMIP phases and be used for a scripted analysis of the DeepMIP data sets.
+The dictionaries contain information about models and experiments of individual DeepMIP ensembles, as well as an overview of all defined variables. These dictionaries are continously updated with new model simulations and DeepMIP phases and can be used for a scripted analysis of the DeepMIP data sets.
 
 ## scripts
 #### `regrid_deepmip_data.py`
-interpolates global netCDF files from the DeepMIP data sets to a common horizontal grid. It uses the Climate Data Operators (CDO) tool to perform regridding for a list of specified variables for all available models and experiments of the respective DeepMIP ensemble making use of the defined naming conventions and metadata dictionaries.
+Interpolates global netCDF files from the DeepMIP data sets to a common horizontal grid. It uses the Climate Data Operators (CDO) tool to perform regridding for a list of specified variables for all available models and experiments of the respective DeepMIP ensemble making use of the defined naming conventions and metadata dictionaries.
 
 #### `plot_z_scores.py`
-simulates a standard analysis workflow to check the internal consistency of the DeepMIP database. Inputs files are global netCDF files and the results are displayed in overview tables for each DeepMIP experiment.
+Simulates a standard analysis workflow to check the internal consistency of the DeepMIP database and produces overview tables (see below). Inputs files are global netCDF files and the results are displayed in overview tables for each DeepMIP experiment.
 Processing steps include:
 - construct filenames for each DeepMIP experiment, model and variable combination
 - check if specific files exist
@@ -26,7 +26,7 @@ Processing steps include:
 ![Alt Text](deepmip-eocene-p1-x3_atmos_mean_validation_table-1.png)
 
 ## example usage
-Let's recreate the overview tables for the DeepMIP-Eocene-p1 data set (see example above) from scratch using `plot_z-scores.py`.
+Let's recreate the overview tables for the DeepMIP-Eocene-p1 data set (see figure above) from scratch using `plot_z-scores.py`.
 
 1. Install dependencies: Dependencies for all scripts are listed in the individual files. Easiest way to run locally is to create a new conda environment with:
     ``` bash
@@ -40,7 +40,8 @@ Let's recreate the overview tables for the DeepMIP-Eocene-p1 data set (see examp
     ``` bash
     wget -e robots=off --mirror --no-parent -r -c https://dap.ceda.ac.uk/badc/cmip6/data/CMIP6Plus/DeepMIP/deepmip-eocene-p1/
     ```
-3. Create tables: Set the `DBDIR` variable to the path of your newly downloaded data set, then start the parallel processing and plotting of all experiments with:  
+3. Create tables: Set the `DBDIR` variable in `plot_z-scores.py` to the path of your newly downloaded data set, then start the parallel processing and plotting of all experiments with:  
     ``` bash
     python3 plot_z-scores.py
     ```
+The script will show a progress bar and all tables will be saved to `<DBDIR>/validation_tables/`.
